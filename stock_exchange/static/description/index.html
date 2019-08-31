@@ -1,0 +1,91 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Delivery Exchange Process</h2>
+        <h3 class="oe_slogan">Process to handle Exchange process through Odoo Inventory system</h3>
+        <h4 class="oe_slogan"></h4>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Delivery Exchange Process</h2>
+        <div align="center">
+            <p class="oe_mb32">First of all we have to confirm Sales or Purchase Order to get the delivery process</p>
+            <img class="center oe_picture oe_screenshot" style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="sale.png">
+            <br>
+            <p class="oe_mb32">We configure which Operation type we need to exchange with if we found an exchange type will take it and if we not we take the operation type for Return </p>
+            <img class="center oe_picture oe_screenshot" style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="exchange-type.png">
+            <br>
+            <p>
+                First here we should <b>Validate</b> the delivery to be able to make Exchanges
+                and after validating a new <b>Exchange</b> button will appears and we can only exchange Picking moves with the following rules
+            </p>
+            <div align="left">
+                <ul>
+                    <li>Only moves related to Sales or Purchases will be exchanges</li>
+                    <li>We can not Exchange moves that has already Exchanged before</li>
+                    <li>We exchange the same product with another Quantity, UOM and Price</li>
+                </ul>
+                As the following Example we exchange
+                <ul>
+                    <li>
+                        For the product <b>[E-COM07] Large Cabinet</b>
+                        <ul>
+                            <li>we change it with product <b>[E-COM06] Corner Desk Right Sit</b></li>
+                            <li>From 1 Quantity to 2 quantities</li>
+                            <li>Subtotal decreased from 320$ to 294$</li>
+                            <li>but if we get other product we always generate a new Customer Invoice for it</li>
+                        </ul>
+                    </li>
+                    <li>
+                        For the product <b>[FURN_0269] Office Chair Black</b>
+                        <ul>
+                            <li>Same product and same quantity but we increase the price from 12.5$ to 20$</li>
+                            <li>It will generate a new Customer invoice for the price changes</li>
+                        </ul>
+                    </li>
+                    <li>
+                        For the product <b>	[FURN_6666] Acoustic Bloc Screens</b>
+                        <ul>
+                            <li>Same product and same quantity but we decreased from 2950$ to 2000$</li>
+                            <li>It will generate a new Credit Note for the price changes</li>
+                        </ul>
+                    </li>
+                    <li>
+                        For the product <b>	[E-COM10] Pedal Bin</b>
+                        <ul>
+                            <li>We leave it as is</li>
+                            <li>No invoices will be generated</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <img class="center oe_picture oe_screenshot" style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="Delivery-Exchange.png">
+            <br>
+            <p class="oe_mb32">A new Exchanged Receipt has been created</p>
+            <img class="center oe_picture oe_screenshot" style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="exchanged-delivery.png">
+            <br>
+            <p class="oe_mb32">A new Exchanged widget will show up in Sales and if we just click a new widget will appears with Exchange details with buttons to view all the (Receipts and invoices/Credit notes)</p>
+            <img class="center oe_picture oe_screenshot" style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="sales-exchange-widget.png">
+            <br>
+            <p class="oe_mb32">Same as Purchases but instead of Invoices and Credit notes ( Bills and Refunds) -- and instead of Receipts (Deliveries)</p>
+            <img class="center oe_picture oe_screenshot" style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="purchase.png">
+            <br>
+        </div>
+    </div>
+</section>
+
+<section id="get-in-touch">
+    <div class="container">
+        <div class="section-header text-center wow fadeInDown">
+            <h2 class="section-title">Get in Touch</h2>
+            <p>umar_3ziz@hotmail.com</p>
+            <a href="https://www.linkedin.com/in/umar3ziz/">
+                <img style="margin: 0px auto; max-width: 100%; width: auto; max-height: inherit;" src="linkdin.png">
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>

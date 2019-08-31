@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="ShowExchangeIcon">
+        <div>
+            <style type="text/css">
+                .popover {
+                    max-width: 100%;
+                }
+            </style>
+            <t t-if="exchange">
+                <a role="button" tabindex="0" class="js_exchange_info" style="margin-right:5px;" aria-label="Info" t-att-title="title">
+                    <img t-attf-src="/stock_exchange/static/src/img/exchange.png" style="margin:auto;width:40px;height:40px" alt="Sales Exchange"></img>
+                </a>
+            </t>
+        </div>
+    </t>
+
+    <t t-name="ExchangePopOver">
+        <div>
+            <table class="table table-bordered" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>Product</span>
+                        </th>
+                        <th>
+                            <span>Quantity</span>
+                        </th>
+                        <th>
+                            <span>Price Unit</span>
+                        </th>
+                        <th>
+                            <span>Subtotal</span>
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <t t-foreach="lines" t-as="line">
+                        <tr>
+                            <td>
+                                <span class="oe_form_field">
+                                    <t t-esc="line.product"/>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="oe_form_field oe_form_field_float">
+                                    <t t-esc="line.qty"/>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="oe_form_field oe_form_field_float">
+                                    <t t-esc="line.price"/>
+                                    <t t-esc="line.currency"/>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="oe_form_field oe_form_field_float">
+                                    <t t-esc="line.total"/>
+                                    <t t-esc="line.currency"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+            <button class="btn btn-sm btn-primary js_open_pickings float-left" style="margin-top:5px; margin-bottom:5px;"><t t-esc="pickings.title"/></button>
+        <button class="btn btn-sm btn-secondary js_open_invoices float-right" style="margin-top:5px; margin-bottom:5px;"><t t-esc="invoices.title"/></button>
+    </t>
+
+</templates>

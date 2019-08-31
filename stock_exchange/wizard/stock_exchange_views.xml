@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <act_window name="Exchange Delivery" id="action_stock_exchange"
+        res_model="stock.exchange"
+        view_mode="form" target="new"/>
+
+    <record id="view_stock_exchange_form" model="ir.ui.view">
+        <field name="name">Exchange lines</field>
+        <field name="model">stock.exchange</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="exchange_line_ids" nolabel="1">
+                        <tree editable="bottom" create="0">
+                            <field name="product_id" options="{'no_create': True, 'no_open': True}" force_save="1"/>
+                            <field name="exchange_product_id"/>
+                            <field name="quantity"/>
+                            <field name="uom_id"/>
+                            <field name="price_unit"/>
+                            <field name="price_subtotal"/>
+                            <field name="exchange_id" invisible="1"/>
+                            <field name="move_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </group>
+                <group>
+                    <field name="location_id" options="{'no_create': True, 'no_open': True}" groups="stock.group_stock_multi_locations" required="1"/>
+                </group>
+                <footer>
+                    <button name="create_exchanges" string="Exchange" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
